@@ -9,6 +9,9 @@ import Testimonials from './components/testimonials';
 import Team from './components/Team';
 import Contact from './components/contact';
 import JsonData from './data/data.json';
+import { hot } from 'react-hot-loader/root';
+
+
 
 export class App extends Component {
   state = {
@@ -37,7 +40,7 @@ export class App extends Component {
   }
 }
 
-export default App;
+export default hot(App);
 
 /*
 <Gallery />
