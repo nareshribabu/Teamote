@@ -15,7 +15,7 @@ export class Rooms extends Component {
   // screenshot = "";
   constructor(props){
     super(props);
-    this.state = { screenshot: null, time:null }
+    this.state = { screenshot: null, time:null, roomCode:null }
     // this can be moved directly to the onClick event
     // this.screenshot = this.screenshot.bind(this);
 }
@@ -24,7 +24,8 @@ submitScreenshot() {
   let form_data = new FormData();
     form_data.append('image', this.state.screenshot);
     form_data.append('time', this.state.time);
-    form_data.append('code', this.state.time);
+    form_data.append('roomCode', this.state.roomCode);
+    console.log(this.state);
     // form_data.append('', this.state.content);
     let url = 'http://localhost:8000/api/posts/';
     axios.post(url, form_data, {
@@ -43,7 +44,7 @@ screenshot() {
     // access the webcam trough this.refs
     var screenshot = this.refs.webcam.getScreenshot();
     console.log("Screenshot taken.")
-    this.setState({screenshot: screenshot,time:Date()});
+    this.setState({screenshot: screenshot,time:Date(),roomCode:this.state.roomCode});
 
     this.submitScreenshot();
   }
@@ -63,6 +64,12 @@ screenshot() {
 
   }
   
+  updateInputValue(event) {
+    console.log(event.target.value);
+    this.setState({
+      roomCode:event.target.value
+    });
+  }
 
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -80,9 +87,18 @@ screenshot() {
         <div class="row mt-5">
           <div class="col-12">
           <div class="jumbotron mt-5">
-  <h1>Welcome to Room #12312</h1>
+  <h1>Welcome to your Room</h1>
   <p>Click the button below and enable your webcam to start sending your video feed over. Don't worry, the host won't see your face, and neither will we!</p>
-  <p><a onclick={this.onButtonPush()} class="btn btn-primary btn-lg" href="#" role="button">Begin Streaming</a></p>
+  <form class="form-inline">
+
+  <div class="form-group">
+ &nbsp;
+    <label for="inputPassword2" class="sr-only">Room Code</label>
+    <input  class="form-control btn-lg" id="inputPassword2" placeholder="Room Code" value={this.state.roomCode} onChange={event => this.updateInputValue(event)} />&nbsp;
+    <a onclick={this.onButtonPush()} class="btn btn-primary btn-lg " href="#" role="button">Begin Streaming</a>
+  </div>
+</form>
+
 </div>
           </div>
 
