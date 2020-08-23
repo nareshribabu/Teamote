@@ -7,7 +7,7 @@ export class Contact extends Component {
         <div id="footer">
           <div className="container text-center">
             <p>
-              &copy; 2020 Issaaf Kattan React Land Page Template. Design by{" "}
+              Copyright &copy; 2020. Design by{" "}
               <a href="http://www.templatewire.com" rel="nofollow">
                 TemplateWire
               </a>

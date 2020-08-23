@@ -9,6 +9,8 @@ import Testimonials from './components/testimonials';
 import Team from './components/Team';
 import Contact from './components/contact';
 import JsonData from './data/data.json';
+import Home from './components/home';
+
 
 export class App extends Component {
   state = {
@@ -27,8 +29,8 @@ export class App extends Component {
       <div>
         <Navigation />
         <Header data={this.state.landingPageData.Header} />
-        <Features data={this.state.landingPageData.Features} />
         <About data={this.state.landingPageData.About} />
+        <Features data={this.state.landingPageData.Features} />
         <Services data={this.state.landingPageData.Services} />
         <Team data={this.state.landingPageData.Team} />
         <Contact data={this.state.landingPageData.Contact} />
