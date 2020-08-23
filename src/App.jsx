@@ -10,31 +10,16 @@ import Team from './components/Team';
 import Contact from './components/contact';
 import JsonData from './data/data.json';
 import Home from './components/home';
+import Main from './components/Main'
 
 
 export class App extends Component {
-  state = {
-    landingPageData: {},
-  }
-  getlandingPageData() {
-    this.setState({landingPageData : JsonData})
-  }
-
-  componentDidMount() {
-    this.getlandingPageData();
-  }
-
   render() {
     return (
-      <div>
-        <Navigation />
-        <Header data={this.state.landingPageData.Header} />
-        <About data={this.state.landingPageData.About} />
-        <Features data={this.state.landingPageData.Features} />
-        <Services data={this.state.landingPageData.Services} />
-        <Team data={this.state.landingPageData.Team} />
-        <Contact data={this.state.landingPageData.Contact} />
-      </div>
+      <div className="App">
+      
+      <Main />
+    </div>
     )
   }
 }

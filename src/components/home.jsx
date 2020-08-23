@@ -10,6 +10,17 @@ import Team from './Team';
 import Contact from './contact';
 import JsonData from '../data/data.json';
 export class Home extends Component {
+  state = {
+    landingPageData: {},
+  }
+  getlandingPageData() {
+    this.setState({landingPageData : JsonData})
+  }
+
+  componentDidMount() {
+    this.getlandingPageData();
+  }
+
     render() {
       return (
 <div>
