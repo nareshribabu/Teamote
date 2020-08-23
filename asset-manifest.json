@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Teamote/static/css/main.d11679cc.chunk.css",
+    "main.js": "/Teamote/static/js/main.3fececc6.chunk.js",
+    "main.js.map": "/Teamote/static/js/main.3fececc6.chunk.js.map",
+    "runtime-main.js": "/Teamote/static/js/runtime-main.327ea466.js",
+    "runtime-main.js.map": "/Teamote/static/js/runtime-main.327ea466.js.map",
+    "static/css/2.277dcfd4.chunk.css": "/Teamote/static/css/2.277dcfd4.chunk.css",
+    "static/js/2.bc1fdd76.chunk.js": "/Teamote/static/js/2.bc1fdd76.chunk.js",
+    "static/js/2.bc1fdd76.chunk.js.map": "/Teamote/static/js/2.bc1fdd76.chunk.js.map",
+    "index.html": "/Teamote/index.html",
+    "precache-manifest.8bf24abb6df861007dbb33dbeb188cb4.js": "/Teamote/precache-manifest.8bf24abb6df861007dbb33dbeb188cb4.js",
+    "service-worker.js": "/Teamote/service-worker.js",
+    "static/css/2.277dcfd4.chunk.css.map": "/Teamote/static/css/2.277dcfd4.chunk.css.map",
+    "static/css/main.d11679cc.chunk.css.map": "/Teamote/static/css/main.d11679cc.chunk.css.map",
+    "static/js/2.bc1fdd76.chunk.js.LICENSE.txt": "/Teamote/static/js/2.bc1fdd76.chunk.js.LICENSE.txt",
+    "static/media/rooms.css": "/Teamote/static/media/pencilsbg.d630ac87.png",
+    "static/media/index.css": "/Teamote/static/media/roboto-vietnamese-400-normal.a8be5b46.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.327ea466.js",
+    "static/css/2.277dcfd4.chunk.css",
+    "static/js/2.bc1fdd76.chunk.js",
+    "static/css/main.d11679cc.chunk.css",
+    "static/js/main.3fececc6.chunk.js"
+  ]
+}
