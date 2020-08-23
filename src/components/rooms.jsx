@@ -12,28 +12,54 @@ export class Rooms extends Component {
   
   pushed = false;
   interval = null;
+  btn = null;
+ 
   // screenshot = "";
   constructor(props){
     super(props);
-    this.state = { screenshot: null, time:null, roomCode:null }
+    this.state = { screenshot: null, time:null, lessonCode:null , studentName:null,disabled:false};
     // this can be moved directly to the onClick event
     // this.screenshot = this.screenshot.bind(this);
 }
+
+
+joinLesson() {
+  let form_data = new FormData();
+  form_data.append('lessonCode', this.state.lessonCode);
+  form_data.append('studentName',this.state.studentName);
+
+  let join_url = 'https://azure-ht6-test1.azurewebsites.net/join_lesson/';
+  axios.post(join_url, form_data, {
+    headers: {
+      'content-type': 'multipart/form-data',
+      'Origin':"http://localhost:8080",
+        'Access-Control-Allow-Origin':'*',
+    }
+  })
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => console.log(err))
+};
+
 
 submitScreenshot() {
   let form_data = new FormData();
     form_data.append('image', this.state.screenshot);
     form_data.append('time', this.state.time);
-    form_data.append('roomCode', this.state.roomCode);
+    form_data.append('lessonCode', this.state.lessonCode);
+    form_data.append('studentName',this.state.studentName);
     console.log(this.state);
     // form_data.append('', this.state.content);
-    let url = 'http://localhost:8000/api/posts/';
+    let url = 'https://azure-ht6-test1.azurewebsites.net/post_student_image/';
     axios.post(url, form_data, {
       headers: {
-        'content-type': 'multipart/form-data'
+        'content-type': 'multipart/form-data',
+        'Origin':"http://localhost:8080",
+        'Access-Control-Allow-Origin':'*',
       }
     })
-        .then(res => {
+        .then(res => {  
           console.log(res.data);
         })
         .catch(err => console.log(err))
@@ -41,22 +67,28 @@ submitScreenshot() {
 
 
 screenshot() {
+  this.interval = setInterval(() => {
     // access the webcam trough this.refs
     var screenshot = this.refs.webcam.getScreenshot();
     console.log("Screenshot taken.")
-    this.setState({screenshot: screenshot,time:Date(),roomCode:this.state.roomCode});
+    this.setState({screenshot: screenshot,time:Date(),lessonCode:this.state.lessonCode});
 
     this.submitScreenshot();
+    
+    if(this.pushed) {
+      // this.setState({disabled: true});
+    }
+  }, 1000);
+    
   }
   
 
   onButtonPush() {
-    
+    console.log("RUNNING");
+    // this.setState({disabled: true});
+    this.joinLesson();
     if(!this.pushed){ 
-    this.interval = setInterval(() => {
       this.screenshot();
-    
-    }, 1000);
     this.pushed = true;
   }
     
@@ -67,7 +99,14 @@ screenshot() {
   updateInputValue(event) {
     console.log(event.target.value);
     this.setState({
-      roomCode:event.target.value
+      lessonCode:event.target.value
+    });
+  }
+
+  updateStudentNameValue(event) {
+    console.log(event.target.value);
+    this.setState({
+      studentName:event.target.value
     });
   }
 
@@ -76,7 +115,7 @@ screenshot() {
   }
 
   render() {
-    // this.onButtonPush();
+  
 
     return (
      <div id="full">
@@ -94,8 +133,9 @@ screenshot() {
   <div class="form-group">
  &nbsp;
     <label for="inputPassword2" class="sr-only">Room Code</label>
-    <input  class="form-control btn-lg" id="inputPassword2" placeholder="Room Code" value={this.state.roomCode} onChange={event => this.updateInputValue(event)} />&nbsp;
-    <a onclick={this.onButtonPush()} class="btn btn-primary btn-lg " href="#" role="button">Begin Streaming</a>
+    <input  class="form-control btn-lg" id="roomCode" placeholder="Room Code" value={this.state.lessonCode} onChange={event => this.updateInputValue(event)} />&nbsp;
+    <input  class="form-control btn-lg" id="studentName" placeholder="Student Name" value={this.state.studentName} onChange={event => this.updateStudentNameValue(event)} />
+    <a disabled={this.state.disabled} onclick={this.onButtonPush()} class="btn btn-primary btn-lg " href="#" role="button">Begin Streaming</a>
   </div>
 </form>
 
@@ -114,25 +154,7 @@ screenshot() {
   width = {50 + '%'}/> 
       </div>
       </div>
-      {/* <div class="col-6">
-        <div class="thumbnail">
-          <div class="caption text-center" onclick="location.href='https://flow.microsoft.com/en-us/connectors/shared_slack/slack/'">
-            <div class="position-relative">
-              <img src="https://az818438.vo.msecnd.net/icons/slack.png"  />
-            </div>
-            <h4 id="thumbnail-label"><a href="https://flow.microsoft.com/en-us/connectors/shared_slack/slack/" target="_blank">Microsoft Slack</a></h4>
-            <p><i class="glyphicon glyphicon-user light-red lighter bigger-120"></i>&nbsp;Auditor</p>
-            <div class="thumbnail-description smaller">Slack is a team communication tool, that brings together all of your team communications in one place, instantly searchable and available wherever you go.</div>
-          </div>
-          <div class="caption card-footer text-center">
-            <ul class="list-inline">
-              <li><i class="people lighter"></i>&nbsp;7 Active Users</li>
-              <li></li>
-              <li><i class="glyphicon glyphicon-envelope lighter"></i><a href="#">&nbsp;Help</a></li>
-            </ul>
-          </div>
-        </div>
-      </div> */}
+
     </div>
     <div class="col-md-2">&nbsp;</div>
   </div>

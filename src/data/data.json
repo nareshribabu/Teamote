@@ -104,23 +104,23 @@
     },
     "Features": [{
             "icon": "fa fa-comments-o",
-            "title": "Lorem ipsum",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "title": "Description",
+            "text": "Teamote is a webapp that will mimic a real classroom during remote learning."
         },
         {
             "icon": "fa fa-bullhorn",
-            "title": "Lorem ipsum",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
-        },
-        {
-            "icon": "fa fa-group",
-            "title": "Lorem ipsum",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "title": "Features",
+            "text": "Provides real time analysis of the students’ expressions and reports the average emotion back to the teacher."
         },
         {
             "icon": "fa fa-magic",
-            "title": "Lorem ipsum",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "title": "Purpose",
+            "text": "To provide an accurate representation of understanding and attention for the teacher."
+        },
+        {
+            "icon": "fa fa-group",
+            "title": "Team",
+            "text": "Built for Hack The 6ix, made by Ansel, Keyon, Kyrel, Nareshri."
         }
     ]
 }

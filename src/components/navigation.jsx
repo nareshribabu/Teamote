@@ -42,7 +42,7 @@ export class Navigation extends Component {
               <li>
                 <Link to="/rooms-teacher">
                 <a  >
-                  Teacher Rooms
+                  Teacher View
                 </a>
                 </Link>
               </li>

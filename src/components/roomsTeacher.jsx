@@ -1,7 +1,7 @@
 import React, { Component} from "react";
 import Navigation from "./navigation";
 import axios from 'axios';
-
+import ProgressBar from 'react-bootstrap/ProgressBar';
 // import { ClassCard } from './ClassCard'
 import Card from './Card';
 import './rooms.css';
@@ -16,11 +16,30 @@ export class RoomsTeacher extends Component {
   constructor(props){
     super(props);
     this.state = { screenshot: null, time:null, roomCode:null }
+    this.startState = {}
     // this can be moved directly to the onClick event
     // this.screenshot = this.screenshot.bind(this);
 
     
 }
+
+sendRoomRequest() {
+  let form_data = new FormData();
+  form_data.append('teacherName','asdasdasd');
+  // form_data.append('', this.state.content);
+  let url = 'https://azure-ht6-test1.azurewebsites.net/';
+  axios.post(url, form_data, {
+    headers: {
+      'content-type': 'multipart/form-data'
+    }
+  })
+      .then(res => {
+        this.startState = {'lessonCode':res.data['lessonCode']};
+        console.log(res.data);
+      })
+      .catch(err => console.log(err))
+};
+
 
 
 submitScreenshot() {
@@ -63,12 +82,12 @@ screenshot() {
 
   }
   
-  updateInputValue(event) {
-    console.log(event.target.value);
-    this.setState({
-      roomCode:event.target.value
-    });
-  }
+  // updateInputValue(event) {
+  //   console.log(event.target.value);
+  //   this.setState({
+  //     roomCode:event.target.value
+  //   });
+  // }
 
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -76,7 +95,8 @@ screenshot() {
 
   render() {
     // this.onButtonPush();
-
+    
+    this.sendRoomRequest();
     return (
      <div id="full">
          <Navigation></Navigation>
@@ -85,55 +105,45 @@ screenshot() {
         <div class="container" id="topform">
         <div class="row mt-5">
           <div class="col-12">
-          <div class="jumbotron">
-  <h1>Welcome to your <i>Teacher Room</i></h1>
-  <p>Click the button below and enable your webcam to start sending your video feed over. Don't worry, the host won't see your face, and neither will we!</p>
-  <form class="form-inline">
+          {/* <div class="jumbotron"> */}
+          <h1 >Welcome to your <i>Teacher View</i></h1>
+    <p>Your room code is {this.state.roomCode}. Share it with your students!</p>
+    <p>Below is a live-view of the emotions your students are registering. Keep this tab open as you present to gauge classroom attentiveness!</p>
+          {/* <form class="form-inline">
 
-  <div class="form-group">
- &nbsp;
-    <label for="inputPassword2" class="sr-only">Room Code</label>
-    <input  class="form-control btn-lg" id="inputPassword2" placeholder="Room Code" value={this.state.roomCode} onChange={event => this.updateInputValue(event)} />&nbsp;
-    <a onclick={this.onButtonPush()} class="btn btn-primary btn-lg " href="#" role="button">Begin Streaming</a>
-  </div>
-</form>
+          <div class="form-group">
+        &nbsp;
+            {/* <label for="inputPassword2" class="sr-only">Room Code</label>
+            <input  class="form-control btn-lg" id="inputPassword2" placeholder="Room Code" value={this.state.roomCode} onChange={event => this.updateInputValue(event)} />&nbsp;
+            <a onclick={this.onButtonPush()} class="btn btn-primary btn-lg " href="#" role="button">Begin Streaming</a> */}
+          {/* </div> */}
+        {/* </form> */} 
+
+        </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="row mt-5">
+        <div>
+  <h3>Happiness</h3>
+  <ProgressBar animated variant="success" now={40} />
+  <h3>Disgust</h3>
+  <ProgressBar animated variant="info" now={20} />
+  <h3>Sadness</h3>
+  <ProgressBar animated variant="warning" now={60} />
+  <h3>Fear</h3>
+  <ProgressBar animated variant="danger" now={80} />
+  <h3>Neutral</h3>
+  <ProgressBar animated variant="danger" now={80} />
+</div>
+<div c>
 
 </div>
-          </div>
-
         </div>
-        <div class="row">
-  <div class="col-md-2">&nbsp;</div>
-  <div class="col-md-8">
-    {/* <div class="row space-16"></div> */}
-    <div class="row">
-      <div class="col-12 text-center">
-      </div>
-      <div class="col-6">
-        <div class="thumbnail">
-          <div class="caption text-center" onclick="location.href='https://flow.microsoft.com/en-us/connectors/shared_slack/slack/'">
-            {/* <div class="position-relative">
-              <img src="https://az818438.vo.msecnd.net/icons/slack.png"  />
-            </div> */}
-            <h4 id="thumbnail-label"><a href="https://flow.microsoft.com/en-us/connectors/shared_slack/slack/" target="_blank">Microsoft Slack</a></h4>
-            <p><i class="glyphicon glyphicon-user light-red lighter bigger-120"></i>&nbsp;Auditor</p>
-            <div class="thumbnail-description smaller">Slack is a team communication tool, that brings together all of your team communications in one place, instantly searchable and available wherever you go.</div>
-          </div>
-          <div class="caption card-footer text-center">
-            <ul class="list-inline">
-              <li><i class="people lighter"></i>&nbsp;7 Active Users</li>
-              <li></li>
-              <li><i class="glyphicon glyphicon-envelope lighter"></i><a href="#">&nbsp;Help</a></li>
-            </ul>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-2">&nbsp;</div>
-  </div>
-</div>
-        </div>
-     </div>
+        // </div>
+    
+     
     );
   }
 }

@@ -588,7 +588,6 @@ color: #777;
 }
 
 .s-button {
-	margin-top: 30px;
 	padding: 10px;
 	width: 200px;
 	border: 1px #fff solid;
@@ -596,7 +595,6 @@ color: #777;
 
 .t-button {
 	margin-left: 30px;
-	margin-top: 30px;
 	padding: 10px;
 	width: 200px;
 	border: 1px #fff solid;

@@ -28,8 +28,6 @@ export class Home extends Component {
         <Header data={this.state.landingPageData.Header} />
         <About data={this.state.landingPageData.About} />
         <Features data={this.state.landingPageData.Features} />
-        <Services data={this.state.landingPageData.Services} />
-        <Team data={this.state.landingPageData.Team} />
         <Contact data={this.state.landingPageData.Contact} />
       </div>);
 

@@ -7,10 +7,7 @@ export class Contact extends Component {
         <div id="footer">
           <div className="container text-center">
             <p>
-              Copyright &copy; 2020. Design by{" "}
-              <a href="http://www.templatewire.com" rel="nofollow">
-                TemplateWire
-              </a>
+              Made by HT6 Hackers.<br></br>Copyright &copy; 2020. All rights reserved.
             </p>
           </div>
         </div>
