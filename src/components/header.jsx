@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import './randomfix.css';
 export class Header extends Component {
   render() {
     return (
@@ -8,12 +8,14 @@ export class Header extends Component {
           <div className="overlay">
             <div className="container">
               <div className="row">
-                <div className="col-md-8 col-md-offset-2 intro-text">
-                  <h1>
+                <div className="col-md-8 col-md-offset-2 intro-text " >
+                  <div>
+                  <div class="randomfix">
+                  <h1 style={{backgroundColor:"grey"}}>
                     {this.props.data ? this.props.data.title : "Loading"}
                     <span></span>
                   </h1>
-                  <p>
+                  <p style={{backgroundColor:"grey"}}>
                     {this.props.data ? this.props.data.paragraph : "Loading"}
                   </p>
                   <a
@@ -22,6 +24,8 @@ export class Header extends Component {
                   >
                     Try it out
                   </a>{" "}
+                </div>
+                </div>
                 </div>
               </div>
             </div>

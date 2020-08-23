@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Link} from 'react-router-dom';
 export class Navigation extends Component {
   render() {
     return (
@@ -18,9 +18,12 @@ export class Navigation extends Component {
               <span className="icon-bar"></span>{" "}
               <span className="icon-bar"></span>{" "}
             </button>
+            <Link to = "/">
             <a className="navbar-brand page-scroll" href="#page-top">
               Teamote
             </a>{" "}
+                </Link>
+          
           </div>
 
           <div
@@ -28,12 +31,22 @@ export class Navigation extends Component {
             id="bs-example-navbar-collapse-1"
           >
             <ul className="nav navbar-nav navbar-right">
+
               <li>
-                <a href="#features" className="page-scroll">
-                  Features
+                <Link to="/rooms">
+                <a  >
+                  Student Rooms
                 </a>
+                </Link>
               </li>
               <li>
+                <Link to="/rooms-teacher">
+                <a  >
+                  Teacher Rooms
+                </a>
+                </Link>
+              </li>
+              {/* <li>
                 <a href="#services" className="page-scroll">
                   Services
                 </a>
@@ -42,7 +55,7 @@ export class Navigation extends Component {
                 <a href="#team" className="page-scroll">
                   Team
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

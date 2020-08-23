@@ -64,7 +64,7 @@
     width:0.5vw !important;
     height:75% !important;
   } */
-  #root,html {
+  #html {
     /* background:red; */
     min-height:100vh;
     overflow-y:hidden !important;

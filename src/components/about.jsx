@@ -8,12 +8,12 @@ export class about extends Component {
         <div className="container">
           <div className="row">
             <div className = "buttons-container">
-              <input class = "input-password" type = "password" placeholder = "Enter Class Code"></input>
+              {/* <input class = "input-password" type = "password" placeholder = "Enter Class Code"></input> */}
               <div className="about-text">
-                <Link to = "/signup">
+                <Link to = "/rooms">
                   <button class = "btn-custom s-button" type = "submit">I'm a Student</button>
                 </Link>
-                <Link to = "/signup">
+                <Link to = "/rooms-teacher">
                   <button class = "btn-custom t-button" type = "submit">I'm a Teacher</button>
                 </Link>
               </div>
