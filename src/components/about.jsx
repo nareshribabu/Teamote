@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 export class about extends Component {
   render() {
@@ -6,10 +7,16 @@ export class about extends Component {
         <div id="about">
         <div className="container">
           <div className="row">
-            <div className="about-text">
-              <button class = "st-button" type = "submit">I'm a Student</button>
-              <button type = "submit">I'm a Teacher</button>
-              <input type = "password" placeholder = "Enter Class Code"></input>
+            <div className = "buttons-container">
+              <input class = "input-password" type = "password" placeholder = "Enter Class Code"></input>
+              <div className="about-text">
+                <Link to = "/signup">
+                  <button class = "btn-custom s-button" type = "submit">I'm a Student</button>
+                </Link>
+                <Link to = "/signup">
+                  <button class = "btn-custom t-button" type = "submit">I'm a Teacher</button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
