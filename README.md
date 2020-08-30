@@ -20,6 +20,12 @@ https://youtu.be/_edJf_7ZcLk
 
 ## Images
 
+#### Home Page
+<img src="https://github.com/nareshribabu/Teamote/blob/master/title.png" alt="home" width="250" height="500"/>
+
+#### Student's View
+
+#### Instructor's View
 
 
 
