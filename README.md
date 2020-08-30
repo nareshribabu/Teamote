@@ -18,6 +18,11 @@ https://youtu.be/_edJf_7ZcLk
 ## Devpost
 > Devpost: https://devpost.com/software/teamote
 
+## Images
+
+
+
+
 ## Notes
 - This project was created as part of Hack the 6ix, 2020
 
