@@ -16,7 +16,7 @@ As more and more classes are moving online due to the pandemic, it is very cruci
 https://youtu.be/_edJf_7ZcLk
 
 ## Devpost
-> Devpost: https://devpost.com/software/teamote
+https://devpost.com/software/teamote-wv7ics
 
 ## Images
 
