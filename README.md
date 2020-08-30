@@ -21,7 +21,7 @@ https://youtu.be/_edJf_7ZcLk
 ## Images
 
 #### Logo
-<img src="https://github.com/nareshribabu/Teamote/blob/master/Teamote_Logo.png" alt="home" height="400"/>
+<img src="https://github.com/nareshribabu/Teamote/blob/master/Teamote_Logo.png" alt="home" width="300" height="300"/>
 
 #### Home Page
 <img src="https://github.com/nareshribabu/Teamote/blob/master/title.png" alt="home" height="400"/>
