@@ -1,5 +1,9 @@
 # Teamote
 
+## Video Demo
+https://youtu.be/_edJf_7ZcLk
+
+## Devpost
 > Devpost: https://devpost.com/software/teamote
 
 ### Collaborators:
