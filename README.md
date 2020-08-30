@@ -7,12 +7,19 @@ As more and more classes are moving online due to the pandemic, it is very cruci
   - **Student's View:** Students will be provided with a special classroom code. They can enter this code into the box and click the button to join the classroom. They must turn on their video in order to participate
   - **Instructor's View:** Upon entering the classroom code, the teacher is taken to the video page. The teacher’s view will display an average percentage of all the student’s emotion data. This will help the instructor recognize if the students are understanding the concepts properly or if a concept should be further clarified.
 
+## Technology Used
+- React
+- Django
+- Azure Cognitive Services
 
 ## Video Demo
 https://youtu.be/_edJf_7ZcLk
 
 ## Devpost
 > Devpost: https://devpost.com/software/teamote
+
+## Notes
+- This project was created as part of Hack the 6ix, 2020
 
 ### Collaborators:
 <table>
