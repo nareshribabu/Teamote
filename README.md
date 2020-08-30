@@ -20,13 +20,17 @@ https://youtu.be/_edJf_7ZcLk
 
 ## Images
 
+#### Logo
+<img src="https://github.com/nareshribabu/Teamote/blob/master/Teamote_Logo.png" alt="home" height="400"/>
+
 #### Home Page
-<img src="https://github.com/nareshribabu/Teamote/blob/master/title.png" alt="home" width="250" height="500"/>
+<img src="https://github.com/nareshribabu/Teamote/blob/master/title.png" alt="home" height="400"/>
 
 #### Student's View
+<img src="https://github.com/nareshribabu/Teamote/blob/master/Home.png" alt="student" height="400"/>
 
 #### Instructor's View
-
+<img src="https://github.com/nareshribabu/Teamote/blob/master/Teacher.png" alt="teacher" height="400"/>
 
 
 ## Notes
